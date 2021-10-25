@@ -1,0 +1,29 @@
+.navbar__ml {
+    background-color: #FDE600;
+
+    .logo__ml {
+        width: 53px;
+        height: 36px;
+    }
+
+    .input_search:focus {
+        border: inherit;
+        box-shadow: none !important;
+    }
+
+    .search_icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .search_icon_container {
+        background-color: #EFF0F1;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+}
+
+

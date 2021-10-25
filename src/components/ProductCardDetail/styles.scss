@@ -1,0 +1,33 @@
+.product_detail {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding: 20px;
+
+    .product_detail_media {
+        flex: 5;
+    }
+
+    .product_detail_info {
+        flex: 2;
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+
+        .buy_button {
+            color: white;
+        }
+    }
+
+    .details {
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+
+        h2 {
+            text-align: left;
+        }
+    }
+}
+
+

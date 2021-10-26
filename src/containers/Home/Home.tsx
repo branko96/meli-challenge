@@ -1,20 +1,23 @@
 import React from "react"
 import Navbar from "../../components/Navbar";
-import { Link } from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import "./styles.scss"
-import { Container } from "react-bootstrap";
 import ProductsList from "../../components/ProductsList";
+import Container from "../../components/Container";
 
 const Home = () => {
-    return (
+  let { search } = useLocation();
+
+  const query = new URLSearchParams(search);
+  const paramField = query.get('search');
+  console.log(paramField);
+
+  return (
         <div className="home_container">
             <Navbar />
             <Container>
                 <span className="breadcrum">{"Electronica, Audio y video > iPod > Reproductores > iPod Touch > 32 GB"}</span>
-            </Container>
-            <Container>
                 <div className="content">
-                    <Link to="/product">Product</Link>
                     <ProductsList />
                 </div>
             </Container>

@@ -7,26 +7,26 @@ import searchIcon from "../../assets/ic_Search.png"
 function Navbar() {
     return (
         <NavbarRB className="navbar__ml" variant="dark">
-            <Container>
-                <NavbarRB.Brand href="#home">
+            <Container style={{paddingLeft: 40, paddingRight: 40}}>
+                <NavbarRB.Brand href="/">
                     <img
                         alt=""
                         src={logo}
                         className="d-inline-block align-top logo__ml"/>
                 </NavbarRB.Brand>
-                    <InputGroup>
-                        <FormControl
-                            type="text"
-                            className="input_search"
-                            placeholder="Search..."
-                        />
-                        <div className="search_icon_container">
-                            <img
-                                alt=""
-                                src={searchIcon}
-                                className="d-inline-block align-top search_icon"/>
-                        </div>
-                    </InputGroup>
+                <InputGroup>
+                    <FormControl
+                        type="text"
+                        className="input_search"
+                        placeholder="Search..."
+                    />
+                    <div className="search_icon_container">
+                        <img
+                            alt=""
+                            src={searchIcon}
+                            className="d-inline-block align-top search_icon"/>
+                    </div>
+                </InputGroup>
             </Container>
         </NavbarRB>
     );

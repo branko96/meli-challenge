@@ -1,9 +1,14 @@
 .product {
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    cursor: pointer;
+    .product_card:hover {
+      box-shadow: 0 25px 20px 0 rgba(0, 0, 0 , 0.16), 0 -1px 2px 0 rgba(0, 0, 0 , 0.10);
+    }
 
-    .product_media {
-        flex: 1;
+    .product_card {
+      img {
+        width: 200px;
+      }
     }
 
     .product_info {
@@ -31,6 +36,18 @@
 
     .product_location {
         flex: 1;
+        padding: 20px;
+        text-align: left;
+
+        h6 {
+          color: grey;
+          font-size: 0.8rem !important;
+        }
+    }
+
+    hr {
+      height: 0.5px;
+      color: darkgray;
     }
 }
 

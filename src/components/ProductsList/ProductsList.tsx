@@ -5,9 +5,9 @@ import ProductCard from "../ProductCard";
 const ProductsList = () => {
     return (
         <div className="products_list">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard isLast={false} />
+            <ProductCard isLast={false} />
+            <ProductCard isLast={true} />
         </div>
     )
 }

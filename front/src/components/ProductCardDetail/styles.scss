@@ -3,12 +3,24 @@
 
     .product_detail_media {
         flex: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 600px;
+        margin: auto;
+    }
+
+    .product_detail_info_col {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .product_detail_info {
         flex: 2;
         padding: 25px;
         justify-content: center;
+        align-items: center;
         text-align: left;
 
         h4 {

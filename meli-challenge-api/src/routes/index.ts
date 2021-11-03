@@ -10,7 +10,7 @@ import {
 import {getCategories, parseItems, parseItemShow} from "../utils/itemHelper";
 
 router.get( "/", ( req, res ) => {
-    res.send( "Hello world!" );
+    res.send( "Hello world  " );
 });
 
 router.get( "/items", async ( req, res ) => {
@@ -21,7 +21,7 @@ router.get( "/items", async ( req, res ) => {
     const { query } = req.query
 
     const response = await axios.get(`${MLA_BASE_URL}${MLA_SEARCH_PATH}${query}`).then((r: AxiosResponse<any>) => {
-        const { data: { filters, results } } = r
+        const { data: { available_filters: filters, results } } = r
         const categories = getCategories(filters)
         const rawItems = results.slice(0, 4)
         const items = parseItems(rawItems)

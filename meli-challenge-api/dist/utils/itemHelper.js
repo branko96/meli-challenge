@@ -26,7 +26,8 @@ const parseItem = (item) => {
         free_shipping,
         price: {
             amount,
-            currency
+            currency,
+            decimals: constants_1.DECIMALS
         },
         condition,
     };
@@ -43,7 +44,8 @@ const parseItemShow = (item) => {
         free_shipping,
         price: {
             amount,
-            currency
+            currency,
+            decimals: constants_1.DECIMALS
         },
         condition,
         sold_quantity

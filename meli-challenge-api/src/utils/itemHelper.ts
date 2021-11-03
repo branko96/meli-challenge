@@ -1,4 +1,4 @@
-import {ATTR_ITEM_CONDITION} from "./constants";
+import { ATTR_ITEM_CONDITION, DECIMALS } from "./constants";
 
 export const getCategories = (filters: any[]) => {
   const categoryFilter = filters.filter((f: any) => f.id === "category")[0]
@@ -39,7 +39,8 @@ export const parseItem = (item: any) => {
     free_shipping,
     price: {
       amount,
-      currency
+      currency,
+      decimals: DECIMALS
     },
     condition,
   }
@@ -69,7 +70,8 @@ export const parseItemShow = (item: any) => {
     free_shipping,
     price: {
       amount,
-      currency
+      currency,
+      decimals: DECIMALS
     },
     condition,
     sold_quantity

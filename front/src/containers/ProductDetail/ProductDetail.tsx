@@ -1,9 +1,12 @@
 import React from "react"
 import Navbar from "../../components/Navbar";
-import {Link, useParams} from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import "./styles.scss"
 import ProductCardDetail from "../../components/ProductCardDetail";
 import Container from "../../components/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { GlobalState } from "../../store/reducers";
+import { getProduct } from "../../store/actions/products";
 
 type ProductDetailParams = {
   id: string;
@@ -11,17 +14,27 @@ type ProductDetailParams = {
 
 const ProductDetail = () => {
   const { id } = useParams<ProductDetailParams>()
-  console.log(id);
+  const history = useHistory()
+  const dispatch = useDispatch();
+  const { selectedProduct, isLoadingProduct } = useSelector((state: GlobalState) => state.productsReducer)
+  const getProductStart = (id: string) => dispatch(getProduct(id))
+  const searchProductsStart = (search: string) => history.push("/items?search=" + search)
+
+  React.useEffect(() => {
+    if(id) {
+      getProductStart(id)
+    }
+  },[id])
+
   return (
         <div className="product_detail_container">
-          <Navbar />
+          <Navbar onSubmit={searchProductsStart} />
           <Container>
-            <Link to="/">Home</Link>
             <span className="breadcrum">{"Electronica, Audio y video > iPod > Reproductores > iPod Touch > 32 GB"}</span>
             <div className="content">
-                    <ProductCardDetail />
-                </div>
-            </Container>
+                <ProductCardDetail product={selectedProduct} isLoadingProduct={isLoadingProduct} />
+            </div>
+          </Container>
         </div>
     )
 }

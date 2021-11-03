@@ -27,7 +27,7 @@ router.get("/items", (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
     const { query } = req.query;
     const response = yield axios_1.default.get(`${constants_1.MLA_BASE_URL}${constants_1.MLA_SEARCH_PATH}${query}`).then((r) => {
-        const { data: { filters, results } } = r;
+        const { data: { available_filters: filters, results } } = r;
         const categories = (0, itemHelper_1.getCategories)(filters);
         const rawItems = results.slice(0, 4);
         const items = (0, itemHelper_1.parseItems)(rawItems);

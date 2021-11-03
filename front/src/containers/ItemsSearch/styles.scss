@@ -1,9 +1,14 @@
-.home_container {
+.items_search_container {
 
   .breadcrum {
     display: flex;
     justify-content: flex-start;
     color: gray;
     margin: 15px 0 15px 0;
+  }
+
+  .content {
+    background-color: white;
+    margin-bottom: 40px;
   }
 }

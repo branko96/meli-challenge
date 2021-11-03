@@ -4,3 +4,4 @@ export const MLA_GET_ITEM_PATH = "items/"
 export const MLA_GET_ITEM_DESC_PATH = "/description"
 
 export const ATTR_ITEM_CONDITION = "ITEM_CONDITION"
+export const DECIMALS = 2
